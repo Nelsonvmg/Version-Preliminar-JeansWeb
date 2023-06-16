@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+  <title>Directorio de Personas</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+  <script>
+    $(document).ready(function() {
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#myTable tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+  </script>
+  <!-- Menú de navegación -->
+  <div class="navigation">
+    <div class="menuToggle">                   
+    </div>
+    <ul>
+       <li><a href="#">Inicio</a></li>
+       <li><a href="../4 Usuarios/Registrar/Registro.html" target="_blank">Registrar</a></li>
+       <li><a href="#">Módulo Ventas</a></li>
+       <li><a href="#">Módulo Invetario</a></li>
+       <li><a href="#">Módulo Proveedor</a></li>
+       <li><a href="../4 Usuarios/Registrar/Registro.html" target="_blank">Eliminar</a></li>
+       <li><a href="../Tabla Usuarios Update/index.html" target="_blank">Editar Directorio</a></li> 
+    </ul>
+ </div>
+</head>
+<body>
+  <h1 class="centrado">Directorio de Personas</h1>
+  <input type="text" id="searchInput" placeholder="Buscar...">
+  <button onclick="generarReporte()">Generar Reporte</button>
+  <table id="personasTable">
+      <th>ID</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Dirección</th>
+      <th>Correo</th>
+      <th>Teléfono</th>
+      <th>Género</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Número de Usuario</th>
+      <th>Contraseña</th>
+      <th>Fecha de Registro</th>
+      <th>Estado</th>
+    </tr>
+  </table>  
+  <script src="./script.js"></script>
+</body>
+<script>
+    $(document).ready(function() {
+      $('#searchInput').on('keyup', function() {
+        var value = $(this).val().toLowerCase();
+        $('#personasTable tbody tr').filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+    });
+    </script>
+    <script src="./reporte.js"></script>    
+</html>

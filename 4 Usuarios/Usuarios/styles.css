@@ -1,0 +1,36 @@
+
+
+/* Bloque de código para tabla*/
+.table {
+  width: 50%;
+  margin: 0 auto; 
+  border-collapse: collapse; 
+}
+
+.table th,
+.table td {  
+  border: none;
+  text-align: center;
+}
+
+.table td button i {
+  margin-right: 20px;
+  font-size: 24px; 
+  animation-duration: 1s; 
+  animation-name: bounce; 
+  animation-iteration-count: infinite; 
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
