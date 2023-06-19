@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CANAANN Tienda</title>
+  <!-- Enlace al archivo CSS personalizado -->
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Enlace a la biblioteca Font Awesome para utilizar iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  
+  <!-- Estilos CSS adicionales para el icono de WhatsApp -->
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header class="main-header">
+      <div class="container container--flex">
+        <div class="main-header__container">
+          <h1 class="main-header__title">CANAANN</h1>
+          <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+          <nav class="main-nav" id="main-nav">
+            <ul class="menu">
+              <li class="menu__item"><a href="#" class="menu__link">HOME</a></li>
+              <li class="menu__item"><a href="#" class="menu__link">ACERCA DE NOSOTROS</a></li>
+              <li class="menu__item"><a href="#" class="menu__link">TIENDA</a></li>
+              <li class="menu__item"><a href="#" class="menu__link">CONTACTENOS</a></li>
+              <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="registrar()">REGÍSTRATE</a></li>
+              <!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
+            </ul>
+          </nav>
+        </div>
+        <div class="main-header__container">
+          <!-- Texto de ayuda -->
+          <span class="main-header__txt">Necesitas ayuda?</span>
+          <!-- Número de teléfono de contacto -->
+          <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link"><i class="fas fa-phone"></i>+57 311 4696088</a>
+        </div>
+        <div class="main-header__container">
+          <!-- Icono de usuario -->
+          <a href="" class="main-header__link"><i class="fas fa-user"></i></a>
+          <!-- Botón del carrito de compras -->
+          <a href="" class="main-header__btn">Mi carrito<i class="fas fa-shopping-cart"></i></a>
+          <!-- Barra de búsqueda -->
+          <input type="search" class="main-header__input" placeholder="Buscar productos"><i class="fas fa-search"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Enlace de WhatsApp con icono -->
+<a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank">
+  <i class="fab fa-whatsapp whatsapp-icon"></i>
+</a>
+    <!-- Contenedor del slider de imágenes -->
+    <div class="container-slider">
+      <div class="slider" id="slider">
+        <div class="slider__section">
+          <img src="https://i.postimg.cc/LsSWhjsF/2.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Nueva colección</h2>
+            <p class="slider__txt">Solo por hoy 50% de descuento</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+        </div>
+        <div class="slider__section">
+          <img src="https://i.postimg.cc/7hJ9KLLN/15.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Nueva colección</h2>
+            <p class="slider__txt">Solo por hoy 50% de descuento</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+        </div>
+        <div class="slider__section">
+          <img src="https://i.postimg.cc/zv4tNgQM/3.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Nueva colección</h2>
+            <p class="slider__txt">Solo por hoy 50% de descuento</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+        </div>
+        <div class="slider__section">
+          <img src="https://i.postimg.cc/28zFqTQw/54.jpg" alt="" class="slider__img">
+          <div class="slider__content">
+            <h2 class="slider__title">Nueva colección</h2>
+            <p class="slider__txt">Solo por hoy 50% de descuento</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+      <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+    </div>
+    <main class="main">
+      <div class="container">
+        <h2 class="main-title">Nueva colección para ti</h2>
+        <section class="container-products">
+          <div class="product">
+            <img src="https://i.postimg.cc/k40Y3SzH/32.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Enterizo en jean(Azul - Negro)</h3>
+              <span class="product__price">$80.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+          <div class="product">
+            <img src="https://i.postimg.cc/mgjnzt1c/28.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Overol en jean(Azul - Negro)</h3>
+              <span class="product__price">$85.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+          <div class="product">
+            <img src="https://i.postimg.cc/N0VpmTs0/40.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Jean para dama(Azul - Negro)</h3>
+              <span class="product__price">$60.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+          <div class="product">
+            <img src="https://i.postimg.cc/BbjYRgmH/4.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Shorts en jean</h3>
+              <span class="product__price">$50.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+        </section>
+        <section class="container__testimonials">
+          <h2 class="section__title">Experiencias</h2>
+          <h3 class="testimonial__title">Mariana </h3>
+          <p class="testimonial__txt">Al probarlos, noté de inmediato lo suaves y cómodos que eran. El tejido de alta calidad se adaptaba perfectamente a mi cuerpo, abrazando mis curvas de forma halagadora. Me sentí segura y confiada, ya que realzaban mis atributos de una manera muy favorecedora.</p>
+        </section>
+      
+        <div class="container-editor">
+          <div class="editor__item">
+            <img src="https://i.postimg.cc/MGcY6T7J/48.jpg" alt="" class="editor__img">
+            <p class="editor__circle">DEFINE TU ESTILO AHORA</p>
+          </div>
+          <div class="editor__item">
+            <img src="https://i.postimg.cc/Gtv7c21m/34.jpg" alt="" class="editor__img">
+            <p class="editor__circle">DEFINE TU ESTILO AHORA</p>
+          </div>
+        </div>
+        <section class="container-tips">
+          <div class="tip">
+            <i class="far fa-hand-paper"></i> 
+            <h2 class="tip__title">Satisfacción garantizada</h2>
+            <p class="tip__txt">Para CANAANN tú satisfacción es nuestra máxima prioridad</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+          <div class="tip">
+           <i class="fas fa-rocket"></i>
+            <h2 class="tip__title">Envios a todo el pais</h2>
+            <p class="tip__txt">Compra ahora, hacemos envios a todo el pais sin costo adicional.</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+          <div class="tip">
+            <i class="fas fa-cog"></i>
+            <h2 class="tip__title">Materiales</h2>
+            <p class="tip__txt">Los jeans están confeccionados con una combinación
+               de materiales de alta calidad, como algodón, elastano y poliéster, que garantizan durabilidad, comodidad y un ajuste perfecto.</p>
+            <a href="" class="btn-shop">COMPRA YA</a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="main-footer">
+      <div class="footer__section">
+        <h2 class="footer__title">Acerca de Nosotros</h2>
+        <p class="footer__txt">Somos una tienda de ropa en línea comprometida en ofrecer productos de alta calidad y las últimas tendencias de moda a nuestros clientes. 
+        Nuestro objetivo es brindar una experiencia de compra excepcional y satisfacer las necesidades de estilo de la mujer.</p>
+        <h2 class="footer__title">Contactenos</h2>
+        <p class="footer__txt">Telefono: +57 311 469 6088</p>
+        <p class="footer__txt">Email : lauralizethriveraaguilar04@gmail.com</p>       
+      </div>
+      <div class="footer__section">
+        <h2 class="footer__title">Ubicación</h2>
+        <p class="footer__txt">Calle 10 #12-04 Centro Comercial La Gran Esquina Local 121 Primer Piso Entrada 7, Bogotá, Colombia</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9648895518794!2d-74.08289639125533!3d4.600311742504131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9909092c9281%3A0x19227c786b2afafe!2sCentro%20Comercial%20La%20Gran%20Esquina!5e0!3m2!1ses-419!2sco!4v1684434263998!5m2!1ses-419!2sco" 
+        width="275" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        
+      </div>
+      <div class="footer__section">
+        <h2 class="footer__title">Enlaces de Interes</h2>
+        <a href="" class="footer__link">Home</a>
+        <a href="" class="footer__link">Acerca de nosotros</a>
+        <a href="" class="footer__link">Tienda</a>
+        <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link">Contactenos</a>
+      </div>
+      <div class="footer__section">
+        <h2 class="footer__title">Suscribete Para Recibir Nuestras Ofertas</h2>
+        <p class="footer__txt">Al suscribirse a nuestra lista de correo, siempre recibirá nuestras últimas noticias y actualizaciones.</p>
+        <h2 class="footer__title">Clip Aquí</h2>
+        <div class="call-to-action-container">
+          <a class="call-to-action">Regístrate</a>
+        </div>
+      </div>
+      <p class="copy">© 2023 CANAANN. Todos los derechos reservados| Design by Nelsonvmg</p>
+    </footer>
+</body>
+<!-- partial -->
+<script  src="../2 Registro Cliente/scriptRegistro.js"></script>
+<script  src="script.js"></script>
+</html>

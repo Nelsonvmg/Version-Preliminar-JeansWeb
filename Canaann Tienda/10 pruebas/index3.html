@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Registro</title>
+</head>
+<body>
+    <h2>Registro de Usuario</h2>
+    <form action="../2 Registro Cliente/registrar.php" method="POST">
+        <label for="Tipo_Documento">Tipo de Documento:</label>
+        <select name="Tipo_Documento" id="Tipo_Documento">
+            <option value="DNI">DNI</option>
+            <option value="Carnet de Extranjería">Carnet de Extranjería</option>
+            <option value="Pasaporte">Pasaporte</option>
+        </select>
+        <br>
+        <label for="ID_Persona">Número de Documento:</label>
+        <input type="text" name="ID_Persona" required>
+        <br>
+        <label for="Nombre_Persona">Nombres:</label>
+        <input type="text" name="Nombre_Persona" required>
+        <br>
+        <label for="Apellido_Paterno">Apellido Paterno:</label>
+        <input type="text" name="Apellido_Paterno" required>
+        <br>
+        <label for="Apellido_Materno">Apellido Materno:</label>
+        <input type="text" name="Apellido_Materno" >
+        <br>
+        <label for="Edad">Edad:</label>
+        <input type="text" name="Edad" required>
+        <br>
+        <label for="Direccion">Dirección:</label>
+        <input type="text" name="Direccion" required>
+        <br>
+        <label for="Email">Email 1:</label>
+        <input type="email" name="Email" >
+        <br>
+        <label for="Email_2">Email 2:</label>
+        <input type="text" name="Email_2" >        
+        <br>
+        <label for="Persona_ID_Persona">Persona_ID_Persona:</label>
+        <input type="text" name="Persona_ID_Persona" >
+        <br>
+        <label for="Telefono_celular">Teléfono Celular:</label>
+        <input type="text" name="Telefono_celular" >
+        <br>
+        <label for="Telefono_celular_2">Teléfono Fijo:</label>
+        <input type="text" name="Telefono_celular_2">
+        <br>
+        <label for="Usuario">Usuario:</label>
+        <input type="text" name="Usuario" required>
+        <br>
+        <label for="Password">Contraseña:</label>
+        <input type="text" name="Password" required>
+        <br>
+        <input type="submit" value="Registrarse">
+    </form>
+</body>
+</html>
