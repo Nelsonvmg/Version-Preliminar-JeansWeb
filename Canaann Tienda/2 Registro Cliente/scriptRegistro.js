@@ -1,188 +1,255 @@
-function registrar() {
-  // Obtiene las dimensiones de la ventana del navegador
-  var anchoVentana = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  var altoVentana = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+function scriptRegistro() {
+  var formulario = `
+  <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+  .btn {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
 
-  // Calcula las dimensiones de la ventana emergente
-  var anchoEmergente = 400; // Ancho deseado de la ventana emergente
-  var altoEmergente = 400; // Alto deseado de la ventana emergente
-
-  var left = (anchoVentana - anchoEmergente) / 2;
-  var top = (altoVentana - altoEmergente) / 2;
-
-  // Abre la ventana emergente en el centro de la pantalla
-  // Abre la ventana emergente en el centro de la pantalla con la barra de navegación
-var ventanaEmergente = window.open('registrar.php', "Registro", "width=" + anchoEmergente + ", height=" + altoEmergente + ", left=" + left + ", top=" + top + ", location=1");
-
-
-  // Ajusta el zoom de la ventana emergente al 60%
-  ventanaEmergente.document.documentElement.style.zoom = "60%";
-
-  // Crea el contenido del formulario dentro de la ventana emergente
-  var contenidoFormulario = `
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <style>
-          /* Estilos CSS para el formulario en la ventana emergente */
-          h2 {
-            color: #333;
-            text-align: center;
-          }
-
-          form {
-            margin: 20px;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-          }
-
-          label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-          }
-
-          input[type="text"],
-          input[type="email"],
-          input[type="submit"] {
-            width: 50%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-          }
-
-          input[type="submit"] {
-            background-color: #ff0000;
-            border-radius: 100px;
-            border: none;
-            color: white;
-            cursor: pointer;
-          }
-
-          input[type="submit"]:hover {
-            background-color: #0B5ED7;
-            color: #fff;
-          }
-        </style>
-      </head>
-      <body>
-      <h2>Formulario de Registro</h2>
-      <form onsubmit="return validarFormulario()">
-        <div>
-          <label for="Tipo_Documento">Tipo de Documento:</label>
-          <select id="Tipo_Documento" name="Tipo_Documento" required>
-            <option value="">Seleccionar</option>
-            <option value="CC">C.C.</option>
-            <option value="CC_Extra">C.C. de extranjería</option>
-            <option value="Pasaporte">Pasaporte</option>
-          </select>
+  .btn:hover {
+    background-color: #0069d9;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formulario de Registro</h2>
+    <form id="registroForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Tipo_Documento">Tipo de Documento:</label>
+            <select name="Tipo_Documento" id="Tipo_Documento" class="form-control" required>
+              <option value="">Seleccionar</option>
+              <option value="CC">Cédula de Ciudadanía</option>
+              <option value="CC_Extra">Cédula de Extranjería</option>
+              <option value="Pasaporte">Pasaporte</option>
+            </select>
+          </div>
         </div>
 
-        <div>
-          <label for="ID_Persona">Número de Documento:</label>
-          <input type="text" id="ID_Persona" name="ID_Persona" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 12345678" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="ID_Persona">Número de Documento:</label>
+            <input type="text" name="ID_Persona" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 12345678" required>
+          </div>
         </div>
 
-        <div>
-          <label for="Nombre_Persona">Nombres:</label>
-          <input type="text" id="Nombre_Persona" name="Nombre_Persona" placeholder="Ejemplo: Juan Pablo" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Usuario">Confirmar Número de Documento:</label>
+            <input type="text" name="Usuario" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 12345678" required>
+          </div>
         </div>
 
-        <div>
-          <label for="Apellido_Paterno">Primer Apellido:</label>
-          <input type="text" id="Apellido_Paterno" name="Apellido_Paterno" placeholder="Ejemplo: Pérez" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Password">Contraseña:</label>
+            <div class="input-group">
+            <input type="password" id="passwordInput" name="Password" class="form-control" placeholder="Ejemplo: A1234*" required>
+            <button type="button" id="togglePasswordButton" class="btn btn-danger red-button" onclick="togglePasswordVisibility()">Mostrar/Ocultar</button>
+          </div>
+          </div>
+          <div id="passwordStrength" class="mt-2"></div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Nombre_Persona">Nombres:</label>
+            <input type="text" name="Nombre_Persona" class="form-control" placeholder="Ejemplo: Juan Pablo" required>
+          </div>
         </div>
 
-        <div>
-          <label for="Apellido_Materno">Segundo Apellido:</label>
-          <input type="text" id="Apellido_Materno" name="Apellido_Materno" placeholder="Ejemplo: Gómez">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Apellido_Paterno">Primer Apellido:</label>
+            <input type="text" name="Apellido_Paterno" class="form-control" placeholder="Ejemplo: Pérez" required>
+          </div>
         </div>
 
-        <div>
-          <label for="Edad">Edad Actual:</label>
-          <input type="text" id="Edad" name="Edad" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 20" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Apellido_Materno">Segundo Apellido:</label>
+            <input type="text" name="Apellido_Materno" class="form-control" placeholder="Ejemplo: Gómez">
+          </div>
         </div>
 
-        <div>
-          <label for="Direccion">Dirección Residencial:</label>
-          <input type="text" id="Direccion" name="Direccion" placeholder="Ejemplo: Dg 45 Este #35-78*" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Edad">Edad Actual:</label>
+            <input type="text" name="Edad" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 20" required>
+          </div>
         </div>
 
-        <div>
-          <label for="Email">Email 1:</label>
-          <input type="text" id="Email" name="Email" placeholder="Ejemplo: juanpablo1@" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Direccion">Dirección Residencial:</label>
+            <input type="text" name="Direccion" class="form-control" placeholder="Ejemplo: Dg 45 Este #35-78" required>
+          </div>
         </div>
 
-        <div>
-          <label for="Email_2">Email 2:</label>
-          <input type="text" id="Email_2" name="Email_2" placeholder="Ejemplo: pablojuan21@">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Email">Email 1:</label>
+            <div class="input-group">
+            <input type="text" id="emailInput" name="Email" class="form-control" placeholder="Ejemplo: juanpablo1@" required>
+            <button type="button" id="togglePasswordButton" class="btn btn-danger red-button" onclick="validateEmail()">Validar</button>
+          </div>
+        </div>
         </div>
 
-        <div>
-          <label for=Telefono_celular">Número de Celular:</label>
-          <input type="text" id="Telefono_celular" name="Telefono_celular" placeholder="Ejemplo: 3137777777" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Email_2">Email 2:</label>
+            <div class="input-group">
+            <input type="text" id="emailInput2" name="Email_2" class="form-control" placeholder="Ejemplo: pablojuan21@">
+            <button type="button" id="togglePasswordButton" class="btn btn-danger red-button" onclick="validateEmail2()">Validar</button>            
+          </div>
+        </div>
         </div>
 
-        <div>
-          <label for=Telefono_celular_2">Número Fijo:</label>
-          <input type="text" id="Telefono_celular_2" name="Telefono_celular_2" placeholder="Ejemplo: 6017777777">
-        </div>
-
-        <div>
-          <label for="Usuario">Número de Usuario:</label>
-          <input type="text" id="Usuario" name="Usuario" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 12345678" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Telefono_celular">Número de Celular:</label>
+            <input type="text" name="Telefono_celular" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 3137777777" required>
+          </div>
         </div>
         
-        <div>
-          <label for="Password">Password:</label>
-          <input type="password" id="Password" name="Password"  placeholder="Ejemplo: A1234*" required>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="Telefono_celular_2">Número Fijo:</label>
+            <input type="text" name="Telefono_celular_2" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 6017777777">
+          </div>
         </div>
 
-        <div>
-          <input type="checkbox" id="mostrarContraseña">
-          <label for="mostrarContraseña">Mostrar contraseña</label>
+      <div id="successMessage"></div>
+  
+      <div class="col-md-6">
+        <div class="form-group">
+          <button type="submit" class="btn btn-danger red-button" class="btn btn-block btn-danger">Registrarse</button>
         </div>
+      </div>      
 
-        <div>
-          <input type="submit" value="Registrarse">
-        </div>
-      </form>
+  <!-- Inicio estructura de control para los datos de registro PHP -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-      <script>
-        var mostrarContraseñaCheckbox = document.getElementById("mostrarContraseña");
-        var passwordInput = document.getElementById("Password");
+  <!-- Inicio estructura de control para los datos de registro PHP -->
+  <script>
+    document.getElementById("registroForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var emailInput = document.getElementById('emailInput');
+      var email = emailInput.value;
+      var emailInput2 = document.getElementById('emailInput2');
+      var email2 = emailInput2.value;
 
-        mostrarContraseñaCheckbox.addEventListener("change", function() {
-          if (mostrarContraseñaCheckbox.checked) {
-            passwordInput.setAttribute("type", "text");
-          } else {
-            passwordInput.setAttribute("type", "password");
+      if (email.includes('@') && email2.includes('@')) {    
+        var formData = $(this).serialize();
+        $.ajax({
+          url: "http://localhost/Canaann%20Tienda/2%20Registro%20Cliente/registrar.php",
+          type: "POST",
+          data: formData,
+          success: function(response) {
+        alert('¡Registro exitoso!');
+          },
+          error: function(xhr, status, error) {
+            // Manejar el error en caso de fallo en la solicitud
           }
         });
+      } else {
+        alert('Por favor, ingresa un email válido que contenga el carácter "@".');
+      }
+    });
+  </script>
+  <!-- Fin estructura de control para los datos de registro PHP -->
 
-        function validarFormulario() {
-          var idPersona = document.getElementById("ID_Persona").value;
-          var usuario = document.getElementById("Usuario").value;
+  <!-- Inicio para validar correos -->
+  <script>
+    function validateEmail() {
+      var emailInput = document.getElementById('emailInput');
+      var email = emailInput.value;
 
-          if (idPersona !== usuario) {
-            alert("El número de documento y el número de usuario deben ser iguales. Por favor, verifícalos.");
-            return false;
-          }
+      if (email.includes('@')) {
+        alert('El email es válido.');
+      } else {
+        alert('Por favor, ingresa un email válido que contenga el carácter "@".');
+      }
+    }
 
-          var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,8}$/;
-          if (!passwordRegex.test(password)) {
-            alert("La contraseña debe tener entre 6 y 8 caracteres y contener al menos una letra, un número y un carácter especial.");
-            return false;
-          }
-          return true;
-        }
-      </script>
-      </body>
-    </html>
+    function validateEmail2() {
+      var emailInput2 = document.getElementById('emailInput2');
+      var email = emailInput2.value;
+
+      if (email.includes('@')) {
+        alert('El email es válido.');
+      } else {
+        alert('Por favor, ingresa un email válido que contenga el carácter "@".');
+      }
+    }    
+  </script>
+  <!-- Fin para validar correos -->  
+ 
+  <!-- Inicio de nivel de seguridad y mostrar contraseña -->
+  <script>
+    function checkPasswordStrength() {
+      var passwordInput = document.getElementById('passwordInput');
+      var passwordStrength = document.getElementById('passwordStrength');
+
+      var password = passwordInput.value;
+      var strength = '';
+
+      if (password.length >= 8) {
+        strength = 'Fuerte';
+      } else if (password.length >= 6) {
+        strength = 'Moderada';
+      } else {
+        strength = 'Débil';
+      }
+
+      passwordStrength.textContent = 'Nivel de seguridad: ' + strength;
+    }
+
+    var passwordInput = document.getElementById('passwordInput');
+    passwordInput.addEventListener('input', checkPasswordStrength);
+
+    function togglePasswordVisibility() {
+      var passwordInput = document.getElementById('passwordInput');
+      var toggleButton = document.getElementById('togglePasswordButton');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleButton.textContent = 'Ocultar';
+      } else {
+        passwordInput.type = 'password';
+        toggleButton.textContent = 'Mostrar';
+      }
+    }
+  </script>
+  <!-- Fin de nivel de seguridad y mostrar contraseña -->
+</body>
+</html> 
   `;
-
-  // Inserta el contenido del formulario en la ventana emergente
-  ventanaEmergente.document.write(contenidoFormulario);
+  
+  var ventanaWidth = 800;
+    var ventanaHeight = 550;
+    var ventanaLeft = (window.innerWidth - ventanaWidth) / 2;
+    var ventanaTop = (window.innerHeight - ventanaHeight) / 2;
+  
+    var ventanaEmergente = window.open("", "registrar", "width=" + ventanaWidth + ",height=" + ventanaHeight + ",left=" + ventanaLeft + ",top=" + ventanaTop);
+    ventanaEmergente.document.write(formulario);
+    ventanaEmergente.document.documentElement.style.zoom = "75%";
 }
+
+// Llamar a la función para abrir la ventana emergente
+abrirVentanaEmergente();

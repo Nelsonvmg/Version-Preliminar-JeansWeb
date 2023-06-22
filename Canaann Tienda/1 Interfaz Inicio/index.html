@@ -25,7 +25,7 @@
               <li class="menu__item"><a href="#" class="menu__link">ACERCA DE NOSOTROS</a></li>
               <li class="menu__item"><a href="#" class="menu__link">TIENDA</a></li>
               <li class="menu__item"><a href="#" class="menu__link">CONTACTENOS</a></li>
-              <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="registrar()">REGÍSTRATE</a></li>
+              <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="scriptRegistro()">REGÍSTRATE</a></li>
               <!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
             </ul>
           </nav>
@@ -38,7 +38,7 @@
         </div>
         <div class="main-header__container">
           <!-- Icono de usuario -->
-          <a href="" class="main-header__link"><i class="fas fa-user"></i></a>
+          <li style="font-size: 24px" class="fas fa-user"><a href="javascript:void(0);" class="main-header__link" onclick="scriptLogin()">LOGIN</a></li>          
           <!-- Botón del carrito de compras -->
           <a href="" class="main-header__btn">Mi carrito<i class="fas fa-shopping-cart"></i></a>
           <!-- Barra de búsqueda -->
@@ -200,5 +200,6 @@
 </body>
 <!-- partial -->
 <script  src="../2 Registro Cliente/scriptRegistro.js"></script>
+<script  src="../3 Login/scriptLogin.js"></script>
 <script  src="script.js"></script>
 </html>

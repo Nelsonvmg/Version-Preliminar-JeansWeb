@@ -1,0 +1,616 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+/* Importa la fuente Roboto desde Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+@font-face {
+  font-family: "Inconsolata";
+  src: url(../fonts/inconsolata.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inconsolata";
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.main-header {
+  background: white;
+  padding: 1 100px;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.main-header__title {
+  text-align: center;
+  font-size: 2.5em;
+  margin: 10px 0;
+  color: #454546;
+  font-family: "Poppins";
+}
+
+.main-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header__link {
+  color: #333;
+}
+
+/* Estilos del Menu */
+.main-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  z-index: 999999;
+}
+
+.menu {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  background: #212121;
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.menu__item {
+  text-align: center;
+  margin: auto;
+}
+
+.menu__link {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.menu__link:hover {
+  background: #ff0000;
+  color: #212121;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-menu {
+  font-size: 1.5em;
+  border: 1px solid #454546;
+  display: block;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.main-header__btn {
+  display: block;
+  padding: 10px 30px;
+  color: #454546;
+  border: 1px solid #454546;
+  text-decoration: none;
+}
+
+.main-header__input {
+  display: block;
+  padding: 10px;
+  width: 50%;
+}
+
+.main {
+  padding: 0 20px;
+}
+
+/* ESTILOS DE SLIDER */
+.container-slider {
+  margin: 50px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 400%;
+  height: 300px;
+  margin-left: -100%;
+  position: relative;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
+
+.slider__section {
+  width: 100%;
+  position: relative;
+}
+
+.slider__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__btn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.slider__btn:hover {
+  background: #fff;
+}
+
+.slider__btn--left {
+  left: 10px;
+}
+
+.slider__btn--right {
+  right: 10px;
+}
+
+.slider__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  text-align: center;
+  z-index: 999;
+}
+
+.slider__title {
+  font-size: 2.2em;
+  margin: 0;
+}
+
+.slider__txt {
+  margin: 5px 0;
+}
+
+.btn-shop {
+  display: block;
+  border: 2px solid #ff0000be;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  margin: 20px auto;
+  transition: all 0.5s;
+}
+
+.btn-shop:hover {
+  background: #ff0000be;
+  color: white;
+}
+
+.main-footer {
+  background: #151515;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer__title {
+  border-bottom: 1px dotted #555;
+  padding-bottom: 20px;
+}
+
+.footer__txt {
+  color: #555;
+}
+
+.footer__link {
+  color: #555;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+}
+
+.footer__input {
+  background: #151515;
+  width: 100%;
+  display: block;
+  padding: 20px;
+  border: 1px solid #555;
+}
+
+.copy {
+  color: #555;
+}
+
+/*Estilos para tablet*/
+@media screen and (min-width: 768px) {
+  .slider {
+    height: 400px;
+  }
+
+  .editor__item {
+    height: 250px;
+  }
+
+  .container-tips {
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*Estilos para web*/
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 1000px;
+    margin: auto;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+
+  .main-header .container--flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-header__container {
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .main-header__txt {
+    width: 100%;
+  }
+
+  .main-header__container:nth-child(2) {
+    order: -1;
+    width: 25%;
+  }
+
+  .main-header__container:nth-child(3) {
+    width: 25%;
+    padding: 0 20px;
+  }
+
+  .main-header__title {
+    width: 100%;
+    font-size: 4em;
+    margin: 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .main-header__link {
+    margin-bottom: 20px;
+  }
+
+  .main-header__btn {
+    width: 130px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .main-header__input {
+    width: 85%;
+  }
+
+  .main-nav {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .menu {
+    position: static;
+    width: 100%;
+    display: flex;
+    background: none;
+  }
+
+  .menu__link {
+    color: #333;
+  }
+
+  .menu__link:hover {
+    background: #ff0000;
+    color: white;
+  }
+
+  .container-products {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+  }
+
+  .product__img {
+    height: 150px;
+  }
+
+  .container__testimonials {
+    font-size: 1.3em;
+  }
+
+  .container-editor {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .editor__item {
+    width: 48%;
+  }
+
+  .main-footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+  }
+
+  .copy {
+    grid-column-start: span 4;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 1200px;
+  }
+
+  .main-header__container:nth-child(3) {
+    padding-left: 60px;
+  }
+
+  .main-header__container:nth-child(2) {
+    font-size: 1.3em;
+  }
+
+  .slider {
+    height: 500px;
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .container {
+    width: 1500px;
+  }
+
+  .main-header__container:nth-child(3) {
+    padding-left: 150px;
+  }
+
+  .main-header__container:nth-child(2) {
+    font-size: 1.5em;
+  }
+
+  .slider {
+    height: 600px;
+  }
+
+  .product__img {
+    height: 200px;
+  }
+}
+.whatsapp-icon {
+  font-size: 60px;
+  color: #808080;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+/* Estilos para el botón de llamada a la acción */
+.call-to-action {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 100px;
+  margin-top: -20px;
+  transition: background-color 0.3s ease;
+}
+
+.call-to-action:hover {
+  background-color: #0B5ED7;
+  color: #fff;
+}
+
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Establece el box-sizing en "border-box" para todos los elementos y elimina el margen y el padding por defecto */
+body {
+  font-family: "Roboto", sans-serif;
+  color: #455a64;
+  line-height: 1.5;
+}
+
+/* Define el tipo de fuente Roboto para el cuerpo del documento, establece el color del texto y la altura de línea */
+.contenedor {
+  max-width: 1000px; /* Ajusta el valor según tus necesidades */
+  margin: 0 auto;
+  padding: 1rem; /* Ajusta el valor según tus necesidades */
+}
+
+.boton-consultar {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  height: 7%;
+}
+
+.documento{
+  padding: 1rem;
+  background-color: #eaeff1;
+  text-align: left;  
+}
+
+.boton-consultar:focus, .boton-consultar:hover {
+  background-color: #455a64;
+  color: #fff;
+  outline: 0;
+  transition: background-color 2s ease-out;
+}  
+
+/* Define un contenedor con un ancho máximo de 1170 píxeles, margen automático para centrarlo horizontalmente, un margen inferior de 1rem y un padding de 1.5rem en todos los lados */
+.wrapper {
+  box-shadow: 0 0 20px 0 rgba(69, 90, 100, 0.7);
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 700px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+/* Establece una sombra y un borde redondeado para el contenedor. Para pantallas con un ancho mínimo de 700 píxeles, establece una disposición en forma de cuadrícula con dos columnas */
+.servicios {
+  list-style: none;
+  text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  .servicios {
+    text-align: left;
+  }
+}
+/* Estiliza una lista sin viñetas y centra el texto. Para pantallas con un ancho mínimo de 700 píxeles, alinea el texto a la izquierda */
+.logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Centra el texto dentro de un elemento con la clase "logo" y agrega un margen inferior de 1rem */
+.info-empresa {
+  padding: 1rem;
+  background-color: #ccd7dc;
+}
+
+.info-empresa h3 {
+  text-align: center;
+}
+
+@media screen and (min-width: 700px) {
+  .info-empresa h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+}
+/* Estiliza un elemento con la clase "info-empresa", agrega padding y establece un color de fondo. Centra el texto del encabezado h3. Para pantallas con un ancho mínimo de 700 píxeles, alinea el texto del encabezado h3 a la izquierda y agrega un margen inferior de 0.5rem */
+.nombre-empresa {
+  color: #263137;
+}
+
+/* Establece el color de texto a #263137 para los elementos con la clase "nombre-empresa" */
+.contacto {
+  padding: 1rem;
+  background-color: #eaeff1;
+  text-align: left;
+}
+
+.contacto h1 {
+  text-align: center;
+}
+
+.contacto h3 {
+  margin-bottom: 1rem;
+}
+
+/* Estiliza un elemento con la clase "contacto", agrega padding y establece un color de fondo. Centra el texto del encabezado h3 y agrega un margen inferior de 1rem */
+.formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.formulario label {
+  display: block;
+}
+
+.formulario button,
+.formulario input,
+.documento,
+.formulario textarea {
+  width: 100%;
+  padding: .5rem;
+  border: 1px solid #ccd7dc;
+}
+
+.formulario textarea {
+  resize: none;
+}
+.documento{
+  background-color: white ;
+}
+
+/* Estiliza un formulario con la clase "formulario", lo convierte en una cuadrícula de dos columnas con un espacio de 1.25rem entre ellas. Estiliza las etiquetas como elementos de bloque. Establece el ancho, el padding y el borde para los botones, campos de entrada y áreas de texto del formulario. También se establece la propiedad "resize" en "none" para evitar que el área de texto sea redimensionable */
+.full {
+  grid-column: 1/3;
+}
+
+/* Aplica una propiedad "grid-column" a un elemento con la clase "full", abarcando desde la primera hasta la tercera columna */
+.boton-enviar {
+  background-color: #ccd7dc;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.boton-enviar:focus, .boton-enviar:hover {
+  background-color: #455a64;
+  color: #fff;
+  outline: 0;
+  transition: background-color 2s ease-out;
+}
+
+/* Estiliza un botón con la clase "boton-enviar", establece el color de fondo, el borde, el borde redondeado, la transformación de texto a mayúsculas, el peso de la fuente en negrita y el cursor como puntero. También se especifican estilos cuando el botón está en foco o se está pasando el cursor sobre él, cambiando el color de fondo, el color del texto, eliminando el contorno y agregando una transición suave de 2 segundos para el cambio de color de fondo */
