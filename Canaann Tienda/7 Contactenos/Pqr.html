@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Canaann Pqrs - Contactenos</title>
+  <title>Canaann Pqrs - Contactenos</title>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="./style.css">
 <!-- partial:index.partial.html -->
@@ -89,7 +89,8 @@
       <div class="contacto">
         <h1>CONTACTENOS</h1>
         <br>
-        <p>
+        <form class="formulario"action="radicacion.php" method="POST">
+        <p>    
           <label for="tipo" id="lo">Tipo de Comunicación:</label>
           <select name="tipo" id="tipo">
               <option value=""> </option>
@@ -109,7 +110,7 @@
               <option value="CedulaExtranjeria">Cédula de Extranjería</option>
           </select>
           <br><br>
-        <form class="formulario">
+        <form class="formulario"action="radicacion.php" method="POST">
           <p>
             <label>Número del Documento</label>
             <input type="text" name="documento" required>
@@ -128,7 +129,7 @@
           </p>
           <p>
             <label>Telefono</label>
-            <input type="text" name="teléfono" required>
+            <input type="text" name="telefono" required>
           </p>
           <p>
             <label>Email</label>

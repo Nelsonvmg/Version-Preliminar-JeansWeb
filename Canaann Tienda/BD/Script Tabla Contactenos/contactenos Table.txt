@@ -1,15 +1,15 @@
-CREATE TABLE `contactenos` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `tipo_comunicacion` varchar(50) NOT NULL,
-  `tipo_documento` varchar(255) DEFAULT NULL,
-  `numero_documento` varchar(255) DEFAULT NULL,
-  `razon_social` varchar(255) DEFAULT NULL,
-  `nombres` varchar(255) DEFAULT NULL,
-  `apellidos` varchar(255) DEFAULT NULL,
-  `telefono` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `mensaje` text DEFAULT NULL,
-  `estado` varchar(50) DEFAULT 'radicada',
-  `respuesta` text DEFAULT NULL,
-  `fecha_radicacion` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE contactenos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_comunicacion VARCHAR(50),
+    tipo_documento VARCHAR(50),
+    numero_documento VARCHAR(50),
+    razon_social VARCHAR(100),
+    nombres VARCHAR(100),
+    apellidos VARCHAR(100),
+    telefono VARCHAR(20),
+    email VARCHAR(100),
+    mensaje TEXT,
+    fecha_radicacion DATETIME,
+    estado VARCHAR(50),
+    respuesta TEXT
+);
