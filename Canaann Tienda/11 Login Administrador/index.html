@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Interfaz de Administrador</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS para estilos -->
+  <script src="script.js"></script>        
+        <!-- Ventana emergente (popup) -->
+         <div id="popup" class="popup-container">
+          <div class="popup-content">
+            <h2>Gestión de Usuarios</h2>
+            <p>Contenido de la ventana emergente</p>
+            <button onclick="closePopup()">Cerrar</button>
+          </div>
+        </div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .panel-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      padding: 20px;
+    }
+
+    .panel {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* Estilos para la ventana emergente */
+    .popup-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      visibility: hidden;
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .popup-container.show {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>   
+</head>
+<body>
+  <header>
+    <div>
+      <h2>Panel de Administración</h>
+    </div>
+    <div>      
+        <div class="hamburger-menu" onclick="toggleNavMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>       
+    </div> 
+  </header>
+  <div class="hamburger-menu" onclick="toggleNavMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="#usuarios">Gestión de Usuarios</a></li>
+      <li><a href="#contenido">Gestión de Contenido</a></li>
+      <li><a href="#configuracion">Configuración del Sistema</a></li>
+      <li><a href="#informes">Informes y Estadísticas</a></li>
+      <li><a href="#permisos">Gestión de Permisos</a></li>
+      <li><a href="#actividad">Registro de Actividad</a></li>
+      <li><a href="#ventas">Gestión de Ventas</a></li>
+      <li><a href="#pqr">Gestión PQRS</a></li>
+      <li><a href="#inventario">Gestión de Inventario</a></li>
+      <li><a href="#proveedores">Gestión de Proveedores</a></li>
+    </ul>
+  </nav>
+<!-------------------------------------Gestión de Usuarios---------------------------------------------------------------- -->
+<body>
+  <div class="panel-container">
+    <div>      
+        <div class="panel-container">
+          <section id="contenido">
+            <h2>Gestión de Usuarios</h2>
+            <ul>
+              <li><a href="#" onclick="openPopup()">Registrar usuario</a></li>
+              <li><a href="#" onclick="openPopup()">Consultar usuario</a></li>
+              <li><a href="#" onclick="openPopup()">Editar usuario</a></li>
+              <li><a href="#" onclick="openPopup()">Archivar usuario</a></li>
+            </ul>
+          </section>
+        </div>
+        <script>
+          function openPopup() {
+            var popup = document.getElementById('popup');
+            popup.innerHTML = `
+            <div class="popup-content">
+      <h2>Agregar usuario</h2>
+      <h2>Formulario de Registro</h2>
+      <form>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Tipo_Documento">Tipo de Documento:</label>
+        <select name="Tipo_Documento" id="Tipo_Documento" class="form-control" required>
+          <option value="">Seleccionar</option>
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="CC_Extra">Cédula de Extranjería</option>
+          <option value="Pasaporte">Pasaporte</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="ID_Persona">Número de Documento:</label>
+        <input type="text" name="ID_Persona" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 12345678" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Usuario">Confirmar Número de Documento:</label>
+        <input type="text" name="Usuario" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 12345678" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Password">Contraseña:</label>
+        <div class="input-group">
+        <input type="password" id="passwordInput" name="Password" class="form-control" placeholder="Ejemplo: A1234*" required>        
+      </div>
+      </div>
+      <div id="passwordStrength" class="mt-2"></div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Nombre_Persona">Nombres:</label>
+        <input type="text" name="Nombre_Persona" class="form-control" placeholder="Ejemplo: Juan Pablo" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Apellido_Paterno">Primer Apellido:</label>
+        <input type="text" name="Apellido_Paterno" class="form-control" placeholder="Ejemplo: Pérez" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Apellido_Materno">Segundo Apellido:</label>
+        <input type="text" name="Apellido_Materno" class="form-control" placeholder="Ejemplo: Gómez">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Edad">Edad Actual:</label>
+        <input type="text" name="Edad" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 20" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Direccion">Dirección Residencial:</label>
+        <input type="text" name="Direccion" class="form-control" placeholder="Ejemplo: Dg 45 Este #35-78" required>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Email">Email 1:</label>
+        <div class="input-group">
+        <input type="text" id="emailInput" name="Email" class="form-control" placeholder="Ejemplo: juanpablo1@" required>       
+      </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Email_2">Email 2:</label>
+        <div class="input-group">
+        <input type="text" id="emailInput2" name="Email_2" class="form-control" placeholder="Ejemplo: pablojuan21@">       
+      </div>
+    </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Telefono_celular">Número de Celular:</label>
+        <input type="text" name="Telefono_celular" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 3137777777" required>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="Telefono_celular_2">Número Fijo:</label>
+        <input type="text" name="Telefono_celular_2" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="Ejemplo: 6017777777">
+      </div>
+    </div>
+
+ 
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <button type="submit" class="btn btn-danger red-button" class="btn btn-block btn-danger" onclick="insertarDatos()">Registrarse</button>
+    </div>
+  </div>        
+</form>
+  <button onclick="closePopup()">Cerrar</button>
+</div>
+            `;
+            popup.classList.add('show');
+          }
+        
+          function closePopup() {
+            var popup = document.getElementById('popup');
+            popup.classList.remove('show');
+          }
+        
+          function insertarDatos() {
+            // Aquí puedes escribir la lógica para insertar los datos en la base de datos
+            // Puedes utilizar AJAX, Fetch API u otra técnica según tus necesidades y preferencias
+            // Por ejemplo:
+            var formulario = document.getElementById('registroForm');
+            var datos = new FormData(formulario);
+            // Realizar la solicitud al servidor para insertar los datos
+            fetch('./registrar.php', {
+              method: 'POST',
+              body: datos
+            })
+            .then(response => response.json())
+            .then(data => {
+              // Aquí puedes manejar la respuesta del servidor
+              console.log(data);
+              document.getElementById('successMessage').innerHTML = 'Registro exitoso.';
+            })
+            .catch(error => {
+              // Aquí puedes manejar el error en caso de que la solicitud falle
+              console.error(error);
+              document.getElementById('successMessage').innerHTML = 'Error al registrar.';
+            });
+          }
+        </script>
+        </div>
+        
+    
+  
+<!-- -------------------------------------------------------------------------------------------------- -->
+  
+    <div class="panel-container">
+      <section id="contenido">
+        <i class="icon ion-document-text"></i>
+        <h2>Gestión de Contenido</h2>
+        <!-- Contenido de la sección de gestión de contenido -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="configuracion">
+        <i class="icon ion-settings"></i>
+        <h2>Configuración del Sistema</h2>
+        <!-- Contenido de la sección de configuración del sistema -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="informes">
+        <i class="icon ion-stats-bars"></i>
+        <h2>Informes y Estadísticas</h2>
+        <!-- Contenido de la sección de informes y estadísticas -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="permisos">
+        <i class="icon ion-lock-combination"></i>
+        <h2>Gestión de Permisos</h2>
+        <!-- Contenido de la sección de gestión de permisos -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="actividad">
+        <i class="icon ion-time"></i>
+        <h2>Registro de Actividad</h2>
+        <!-- Contenido de la sección de registro de actividad -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="ventas">
+        <i class="icon ion-bag"></i>
+        <h2>Gestión de Ventas</h2>
+        <!-- Contenido de la sección de gestión de ventas -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="pqr">
+        <i class="icon ion-chatbox"></i>
+        <h2>Gestión PQRS</h2>
+        <!-- Contenido de la sección de gestión PQRS -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="inventario">
+        <i class="icon ion-cube"></i>
+        <h2>Gestión de Inventario</h2>
+        <!-- Contenido de la sección de gestión de inventario -->
+      </section>
+    </div>
+  
+    <div class="panel-container">
+      <section id="proveedores">
+        <i class="icon ion-truck"></i>
+        <h2>Gestión de Proveedores</h2>
+        <!-- Contenido de la sección de gestión de proveedores -->
+      </section>
+    </div>
+  </div>
+</body>
+</html>

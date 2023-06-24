@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CANAANN Tienda-Inicio</title>
+  <title>CANAANN Tienda</title>
   <!-- Enlace al archivo CSS personalizado -->
   
   <link rel="stylesheet" href="style.css">
@@ -21,21 +21,19 @@
           <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
           <nav class="main-nav" id="main-nav">
             <ul class="menu">
-              <li class="menu__item"><a href="#" class="menu__link">HOME</a></li>
-              <li class="menu__item"><a href="../9 Acerca About/About.html" class="menu__link">ABOUT</a></li>
-              <li class="menu__item"><a href="../10 Tienda/Tienda.html" class="menu__link">TIENDA</a></li>
-              <li class="menu__item"><a href="../7 Contactenos/Pqr.html" class="menu__link">CONTACTENOS</a></li>
+              <li class="menu__item"><a href="../1 Interfaz Inicio/index.html" class="menu__link" target="_blank">HOME</a></li>
+              <li class="menu__item"><a href="../9 Acerca About/About.html" target="_blank" class="menu__link">ABOUT</a></li>
+              <li class="menu__item"><a href="../7 Contactenos/Pqr.html" target="_blank" class="menu__link">CONTACTENOS</a></li>
               <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="scriptRegistro()">REGÍSTRATE</a></li>
               <!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
             </ul>
           </nav>
         </div>
-        <div class="main-header__container">
-          <a href="https://soysena-my.sharepoint.com/:f:/g/personal/afmurillo447_soy_sena_edu_co/EkROmc_vmnpLmdAfD5-xDOgB2rU39xkXZ2hdY1M_mSd4Ug?e=7AYhGa" target="_blank" class="footer__link"><i class="fas fa-cog"></i></a>         
+        <div class="main-header__container">            
           <!-- Texto de ayuda -->
           <span class="main-header__txt">Necesitas ayuda?</span>
           <!-- Número de teléfono de contacto -->
-          <a href="../5 Errores 404-500/404.html" class="footer__link"><i class="fas fa-phone"></i>+57 311 4696088</a>
+          <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link"><i class="fas fa-phone"></i>+57 311 4696088</a>
         </div>
         <div class="main-header__container"> 
            <!-- Botón del carrito de compras -->
@@ -51,49 +49,43 @@
 <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank">
   <i class="fab fa-whatsapp whatsapp-icon"></i>
 </a>
-    <!-- Contenedor del slider de imágenes -->
-    <div class="container-slider">
-      <div class="slider" id="slider">
-        <div class="slider__section">
-          <img src="https://i.postimg.cc/LsSWhjsF/2.jpg" alt="" class="slider__img">
-          <div class="slider__content">
-            <h2 class="slider__title">Nueva colección</h2>
-            <p class="slider__txt">Solo por hoy 50% de descuento</p>
-            <a href="" class="btn-shop">COMPRA YA</a>
-          </div>
-        </div>
-        <div class="slider__section">
-          <img src="https://i.postimg.cc/7hJ9KLLN/15.jpg" alt="" class="slider__img">
-          <div class="slider__content">
-            <h2 class="slider__title">Nueva colección</h2>
-            <p class="slider__txt">Solo por hoy 50% de descuento</p>
-            <a href="" class="btn-shop">COMPRA YA</a>
-          </div>
-        </div>
-        <div class="slider__section">
-          <img src="https://i.postimg.cc/zv4tNgQM/3.jpg" alt="" class="slider__img">
-          <div class="slider__content">
-            <h2 class="slider__title">Nueva colección</h2>
-            <p class="slider__txt">Solo por hoy 50% de descuento</p>
-            <a href="" class="btn-shop">COMPRA YA</a>
-          </div>
-        </div>
-        <div class="slider__section">
-          <img src="https://i.postimg.cc/28zFqTQw/54.jpg" alt="" class="slider__img">
-          <div class="slider__content">
-            <h2 class="slider__title">Nueva colección</h2>
-            <p class="slider__txt">Solo por hoy 50% de descuento</p>
-            <a href="" class="btn-shop">COMPRA YA</a>
-          </div>
-        </div>
-      </div>
-      <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
-      <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
-    </div>
+    <!-- Contenedor del Catálogo -->    
     <main class="main">
       <div class="container">
         <h2 class="main-title">Nueva colección para ti</h2>
         <section class="container-products">
+          <div class="product">
+            <img src="https://i.postimg.cc/k40Y3SzH/32.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Enterizo en jean(Azul - Negro)</h3>
+              <span class="product__price">$80.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+          <div class="product">
+            <img src="https://i.postimg.cc/mgjnzt1c/28.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Overol en jean(Azul - Negro)</h3>
+              <span class="product__price">$85.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+          <div class="product">
+            <img src="https://i.postimg.cc/N0VpmTs0/40.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Jean para dama(Azul - Negro)</h3>
+              <span class="product__price">$60.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
+          <div class="product">
+            <img src="https://i.postimg.cc/BbjYRgmH/4.jpg" alt="" class="product__img">
+            <div class="product__description">
+              <h3 class="product__title">Shorts en jean</h3>
+              <span class="product__price">$50.000.00</span>
+            </div>
+            <i class="product__icon fas fa-cart-plus"></i>
+          </div>
           <div class="product">
             <img src="https://i.postimg.cc/k40Y3SzH/32.jpg" alt="" class="product__img">
             <div class="product__description">
@@ -184,17 +176,13 @@
       <div class="footer__section">
         <h2 class="footer__title">Enlaces de Interes</h2>
         <a href="" class="footer__link">Home</a>
-        <a href="" class="footer__link">About</a>
-        <a href="" class="footer__link">Tienda</a>
+        <a href="../9 Acerca About/About.html" class="footer__link">About</a>
+        <a href="#" class="footer__link">Tienda</a>
         <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link">Contactenos</a>
       </div>
       <div class="footer__section">
         <h2 class="footer__title">Suscribete Para Recibir Nuestras Ofertas</h2>
-        <p class="footer__txt">Al suscribirse a nuestra lista de correo, siempre recibirá nuestras últimas noticias y actualizaciones.</p>
-        <h2 class="footer__title">Clip Aquí</h2>
-        <div class="call-to-action-container">
-          <a href="../5 Errores 404-500/500.html" class="call-to-action">Registrar</a>
-        </div>        
+        <p class="footer__txt">Al suscribirse a nuestra lista de correo, siempre recibirá nuestras últimas noticias y actualizaciones.</p>                     
       </div>
       <p class="copy">© 2023 CANAANN. Todos los derechos reservados| Design by Nelsonvmg</p>
     </footer>

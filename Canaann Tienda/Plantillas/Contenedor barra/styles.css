@@ -1,0 +1,8 @@
+.panel-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Agrega otros estilos según tus necesidades */
+}

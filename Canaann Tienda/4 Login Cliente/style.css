@@ -491,8 +491,7 @@ img {
   color: 	#808080;
   position: fixed;
   right: 20px; 
-  bottom: 20px;
-  z-index: 9999; 
+  bottom: 20px; 
 }
 
 /* Estilos para el botón de llamada a la acción */

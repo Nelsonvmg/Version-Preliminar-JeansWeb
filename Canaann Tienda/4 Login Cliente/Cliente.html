@@ -2,9 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CANAANN Tienda-Inicio</title>
-  <!-- Enlace al archivo CSS personalizado -->
-  
+  <title>CANAANN Tienda - Cliente</title>  
   <link rel="stylesheet" href="style.css">
   
   <!-- Enlace a la biblioteca Font Awesome para utilizar iconos -->
@@ -15,38 +13,36 @@
 <body>
 <!-- partial:index.partial.html -->
 <header class="main-header">
-      <div class="container container--flex">
-        <div class="main-header__container">
-          <h1 class="main-header__title">CANAANN</h1>
-          <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
-          <nav class="main-nav" id="main-nav">
-            <ul class="menu">
-              <li class="menu__item"><a href="#" class="menu__link">HOME</a></li>
-              <li class="menu__item"><a href="../9 Acerca About/About.html" class="menu__link">ABOUT</a></li>
-              <li class="menu__item"><a href="../10 Tienda/Tienda.html" class="menu__link">TIENDA</a></li>
-              <li class="menu__item"><a href="../7 Contactenos/Pqr.html" class="menu__link">CONTACTENOS</a></li>
-              <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="scriptRegistro()">REGÍSTRATE</a></li>
-              <!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
-            </ul>
-          </nav>
-        </div>
-        <div class="main-header__container">
-          <a href="https://soysena-my.sharepoint.com/:f:/g/personal/afmurillo447_soy_sena_edu_co/EkROmc_vmnpLmdAfD5-xDOgB2rU39xkXZ2hdY1M_mSd4Ug?e=7AYhGa" target="_blank" class="footer__link"><i class="fas fa-cog"></i></a>         
-          <!-- Texto de ayuda -->
-          <span class="main-header__txt">Necesitas ayuda?</span>
-          <!-- Número de teléfono de contacto -->
-          <a href="../5 Errores 404-500/404.html" class="footer__link"><i class="fas fa-phone"></i>+57 311 4696088</a>
-        </div>
-        <div class="main-header__container"> 
-           <!-- Botón del carrito de compras -->
-           <a href="" class="main-header__btn">Mi carrito<i class="fas fa-shopping-cart"></i></a>         
-          <!-- Icono de usuario -->
-          <p></p><li style="font-size: 24px" class="fas fa-user"><a href="../3 Login/Login.html" class="main-header__link" style="text-decoration: none;"> Login</a><p></p></li>                   
-          <!-- Barra de búsqueda -->
-          <input type="search" class="main-header__input" placeholder="Buscar productos"><i class="fas fa-search"></i>
-        </div>
-      </div>
-    </header>
+  <div class="container container--flex">
+    <div class="main-header__container">
+      <h1 class="main-header__title">CANAANN</h1>
+      <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+      <nav class="main-nav" id="main-nav">
+        <ul class="menu">
+          <li class="menu__item"><a href="../1 Interfaz Inicio/index.html" class="menu__link" target="_blank">HOME</a></li>
+          <li class="menu__item"><a href="../9 Acerca About/About.html" target="_blank" class="menu__link">ABOUT</a></li>
+          <li class="menu__item"><a href="../7 Contactenos/Pqr.html" target="_blank" class="menu__link">CONTACTENOS</a></li>
+          <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="scriptRegistro()">REGÍSTRATE</a></li>
+          <!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
+        </ul>
+      </nav>
+    </div>
+    <div class="main-header__container">            
+      <!-- Texto de ayuda -->
+      <span class="main-header__txt">Necesitas ayuda?</span>
+      <!-- Número de teléfono de contacto -->
+      <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link"><i class="fas fa-phone"></i>+57 311 4696088</a>
+    </div>
+    <div class="main-header__container"> 
+       <!-- Botón del carrito de compras -->
+       <a href="" class="main-header__btn">Mi carrito<i class="fas fa-shopping-cart"></i></a>         
+      <!-- Icono de usuario -->
+      <p></p><li style="font-size: 24px" class="fas fa-user"><a href="../3 Login/Login.html" class="main-header__link" style="text-decoration: none;"></a><p></p></li>                   
+      <!-- Barra de búsqueda -->
+      <input type="search" class="main-header__input" placeholder="Buscar productos"><i class="fas fa-search"></i>
+    </div>
+  </div>
+</header>
     <!-- Enlace de WhatsApp con icono -->
 <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank">
   <i class="fab fa-whatsapp whatsapp-icon"></i>
@@ -172,7 +168,7 @@
         <p class="footer__txt">Somos una tienda de ropa en línea comprometida en ofrecer productos de alta calidad y las últimas tendencias de moda a nuestros clientes. 
         Nuestro objetivo es brindar una experiencia de compra excepcional y satisfacer las necesidades de estilo de la mujer.</p>
         <h2 class="footer__title">Contactenos</h2>
-        <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__txt" style="text-decoration: none;">Telefono: +57 311 469 6088</a>
+        <p class="footer__txt">Telefono: +57 311 469 6088</p>
         <p class="footer__txt">Email : lauralizethriveraaguilar04@gmail.com</p>       
       </div>
       <div class="footer__section">
@@ -184,7 +180,7 @@
       <div class="footer__section">
         <h2 class="footer__title">Enlaces de Interes</h2>
         <a href="" class="footer__link">Home</a>
-        <a href="" class="footer__link">About</a>
+        <a href="" class="footer__link">Acerca de nosotros</a>
         <a href="" class="footer__link">Tienda</a>
         <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link">Contactenos</a>
       </div>
@@ -193,8 +189,8 @@
         <p class="footer__txt">Al suscribirse a nuestra lista de correo, siempre recibirá nuestras últimas noticias y actualizaciones.</p>
         <h2 class="footer__title">Clip Aquí</h2>
         <div class="call-to-action-container">
-          <a href="../5 Errores 404-500/500.html" class="call-to-action">Registrar</a>
-        </div>        
+          <a class="call-to-action">Regístrate</a>
+        </div>
       </div>
       <p class="copy">© 2023 CANAANN. Todos los derechos reservados| Design by Nelsonvmg</p>
     </footer>

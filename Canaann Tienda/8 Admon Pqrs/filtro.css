@@ -1,0 +1,95 @@
+
+background:radial-gradient(center center, circle, black)
+
+
+/* Estilos para la tabla */
+#tablaContactenos {
+    width: 60%;
+    border-collapse: collapse;
+    margin-top: center;
+  }
+  
+  #tablaContactenos th,
+  #tablaContactenos td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  #tablaContactenos th {
+    background-color: #f2f2f2;
+  }
+  
+  #tablaContactenos tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  #tablaContactenos tr:hover {
+    background-color: #e6e6e6;
+  }
+  
+  /* Estilos para el encabezado de la página */
+.main-header {
+  background-color: #0471a3;
+  color: #fff;
+  padding: 20px;
+}
+
+.main-header__title {
+  margin: 0;
+}
+
+/* Estilos para el menú */
+.main-nav {
+  display: none;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.menu__link {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Estilos para centrar la tabla */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+  .export-button {
+    font-size: 50px;
+    background-color: lightblue;
+ 
+}
+
+/* Estilos para el encabezado de la página */
+.containerp {
+  background-color: #455a64;
+  color: white;
+  padding: 15px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 24px;
+}
+
+
+
+
+
+

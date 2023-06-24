@@ -19,7 +19,13 @@ img {
   width: 100%;
 }
 .main-header {
-  padding: 0 20px;
+  background: white;
+  padding: 1 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 .main-header__title{
   text-align: center;
@@ -101,7 +107,18 @@ img {
 .main {
   padding: 0 20px;
 }
-
+.Presentacion{
+  margin: 45% 0 5% 0;
+  width: 100%;
+  border-style:solid;
+  border-color: #454546;
+}
+.Diagramas{
+  margin: 45% 0 5% 0;
+  height: 31vw;
+  border-style:solid;
+  border-color: #454546;
+}
 /* ESTILOS DE SLIDER */
 .container-slider{
   margin: 50px 0;
@@ -386,7 +403,7 @@ img {
     width: 25%;
   }
   .main-header__container:nth-child(3){
-    width: 50%;
+    width: 25%;
     padding: 0 20px;
   }
   .main-header__title {
@@ -491,8 +508,7 @@ img {
   color: 	#808080;
   position: fixed;
   right: 20px; 
-  bottom: 20px;
-  z-index: 9999; 
+  bottom: 20px; 
 }
 
 /* Estilos para el botón de llamada a la acción */

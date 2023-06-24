@@ -2,18 +2,18 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Canaann Pqrs - Contactenos</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'><link rel="stylesheet" href="./style.css">
-<!-- partial:index.partial.html -->
-  <meta charset="UTF-8">
-  <title>CANAANN Contactenos</title>
+  <title>CANAANN PQRs</title>
   <!-- Enlace al archivo CSS personalizado -->
-   <link rel="stylesheet" href="style.css">
-    
+  
+  <link rel="stylesheet" href="style.css">
+  
   <!-- Enlace a la biblioteca Font Awesome para utilizar iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> 
-<!-- Encabezado de la Pagina -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  
+  <!-- Estilos CSS adicionales para el icono de WhatsApp -->
+</head>
+<body>
+<!-- partial:index.partial.html -->
 <header class="main-header">
       <div class="container container--flex">
         <div class="main-header__container">
@@ -21,23 +21,28 @@
           <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
           <nav class="main-nav" id="main-nav">
             <ul class="menu">
-              <li class="menu__item"><a href="#" class="menu__link">HOME</a></li>
-              <li class="menu__item"><a href="#" class="menu__link">TIENDA</a></li>
-           </nav>
+              <li class="menu__item"><a href="../1 Interfaz Inicio/index.html" class="menu__link">HOME</a></li>
+              <li class="menu__item"><a href="../9 Acerca About/About.html" class="menu__link">ABOUT</a></li>
+              <li class="menu__item"><a href="../10 Tienda/Tienda.html" target="_blank" class="menu__link">TIENDA</a></li>
+              <li class="menu__item"><a href="javascript:void(0);" class="menu__link" onclick="scriptRegistro()">REGÍSTRATE</a></li>
+              <!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
+            </ul>
+          </nav>
         </div>
-        <div class="main-header__container">
+        <div class="main-header__container">          
           <!-- Texto de ayuda -->
           <span class="main-header__txt">Necesitas ayuda?</span>
           <!-- Número de teléfono de contacto -->
           <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link"><i class="fas fa-phone"></i>+57 311 4696088</a>
         </div>
-        <div class="main-header__container">
+        <div class="main-header__container"> 
+           <!-- Botón del carrito de compras -->
+           <a href="" class="main-header__btn">Mi carrito<i class="fas fa-shopping-cart"></i></a>         
           <!-- Icono de usuario -->
-          <a href="" class="main-header__link"><i class="fas fa-user"></i></a>
-          <!-- Botón del carrito de compras -->
-          <a href="" class="main-header__btn">Mi carrito<i class="fas fa-shopping-cart"></i></a>
+          <p></p><li style="font-size: 24px" class="fas fa-user"><a href="../4 Login Cliente/Cliente.html" class="main-header__link" style="text-decoration: none;"> Login</a><p></p></li>
           <!-- Barra de búsqueda -->
           <input type="search" class="main-header__input" placeholder="Buscar productos"><i class="fas fa-search"></i>
+        </div>
       </div>
     </header>
     <!-- Enlace de WhatsApp con icono -->
@@ -52,45 +57,19 @@
     <div class="wrapper animated bounceInLeft">
       <div class="info-empresa">
         <p>
-        <h1>CONSULTA PQRS</h1>
+        <h1>CONSULTA DE PQRs</h1>
         <br>
-        <label>Digita el número de tu documento:</label>
+        <label>Consulta con el número del documento:</label> 
         <br><br>
-        <input type="text" id="documento" class="documento" required>
+        <input type="text" documento="documento" class="documento" required>
         <br><br>
-        <button class="boton-consultar" onclick="mostrarMensaje()" disabled>Consultar</button>
-
-        <div id="mensaje" style="display: none;">
-        <p>¡Documento consultado con éxito!</p>
-        </div>
-
-<script>
-  document.getElementById("documento").addEventListener("input", function() {
-    // Obtener el valor del campo de texto
-    var documento = this.value.trim();
-    
-    // Obtener el botón de consultar
-    var botonConsultar = document.querySelector(".boton-consultar");
-    
-    // Habilitar o deshabilitar el botón según si se ha ingresado un documento
-    botonConsultar.disabled = documento === "";
-  });
-
-  function mostrarMensaje() {
-    // Obtener el elemento del mensaje
-    var mensaje = document.getElementById("mensaje");
-    
-    // Mostrar el mensaje
-    mensaje.style.display = "block";
-  }
-</script>
-
+        <button class="boton-consultar">Consultar</button>
+        </p> 
       </div>
       <div class="contacto">
         <h1>CONTACTENOS</h1>
         <br>
-        <form class="formulario"action="radicacion.php" method="POST">
-        <p>    
+        <p>
           <label for="tipo" id="lo">Tipo de Comunicación:</label>
           <select name="tipo" id="tipo">
               <option value=""> </option>
@@ -110,7 +89,7 @@
               <option value="CedulaExtranjeria">Cédula de Extranjería</option>
           </select>
           <br><br>
-        <form class="formulario"action="radicacion.php" method="POST">
+        <form class="formulario">
           <p>
             <label>Número del Documento</label>
             <input type="text" name="documento" required>
@@ -129,7 +108,7 @@
           </p>
           <p>
             <label>Telefono</label>
-            <input type="text" name="telefono" required>
+            <input type="text" name="teléfono" required>
           </p>
           <p>
             <label>Email</label>
@@ -156,7 +135,7 @@
         <p class="footer__txt">Somos una tienda de ropa en línea comprometida en ofrecer productos de alta calidad y las últimas tendencias de moda a nuestros clientes. 
         Nuestro objetivo es brindar una experiencia de compra excepcional y satisfacer las necesidades de estilo de la mujer.</p>
         <h2 class="footer__title">Contactenos</h2>
-        <p class="footer__txt">Telefono: +57 311 469 6088</p>
+        <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__txt" style="text-decoration: none;">Telefono: +57 311 469 6088</a>
         <p class="footer__txt">Email : lauralizethriveraaguilar04@gmail.com</p>       
       </div>
       <div class="footer__section">
@@ -167,9 +146,9 @@
       </div>
       <div class="footer__section">
         <h2 class="footer__title">Enlaces de Interes</h2>
-        <a href="" class="footer__link">Home</a>
-        <a href="" class="footer__link">Acerca de nosotros</a>
-        <a href="" class="footer__link">Tienda</a>
+        <a href="#" class="footer__link">Home</a>
+        <a href="../9 Acerca About/About.html" class="footer__link">Acerca de nosotros</a>
+        <a href="../10 Tienda/Tienda.html" class="footer__link">Tienda</a>
         <a href="https://api.whatsapp.com/send?phone=573114696088" target="_blank" class="footer__link">Contactenos</a>
       </div>
       <div class="footer__section">
