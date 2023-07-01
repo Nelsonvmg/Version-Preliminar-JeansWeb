@@ -55,11 +55,11 @@ if ($result) {
                                 break;
                             case 'Administrador':
                                 mensaje += '. Serás redirigido a la página de administrador.';
-                                window.location.href = '../11 Login Administrador/index.html';
+                                window.location.href = '../8 Administracion Pqrs/index.html';
                                 break;
                             case 'Gerente':
                                 mensaje += '. Serás redirigido a la página de gerente.';
-                                window.location.href = 'interfaz_gerente.php';
+                                window.location.href = '../11 Login Administrador/Registro Ventas.html';
                                 break;
                             case 'Publicista':
                                 mensaje += '. Serás redirigido a la página de publicista.';
@@ -67,12 +67,16 @@ if ($result) {
                                 break;
                             case 'Vendedor':
                                 mensaje += '. Serás redirigido a la página de vendedor.';
-                                window.location.href = 'interfaz_vendedor.php';
+                                window.location.href = '../11 Login Administrador/Registro Ventas.html';
                                 break;
                             case 'Proveedor':
                                 mensaje += '. Serás redirigido a la página de proveedor.';
                                 window.location.href = 'interfaz_proveedor.php';
                                 break;
+                            case 'Almacenista':
+                                    mensaje += '. Serás redirigido a la página de Provedores.';
+                                    window.location.href = '../11 Login Administrador/Registro Ventas.html';
+                                    break;
                             default:
                                 mensaje += '. No se encontró un rol válido.';
                                 break;

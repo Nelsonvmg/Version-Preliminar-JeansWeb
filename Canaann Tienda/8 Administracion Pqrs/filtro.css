@@ -1,0 +1,66 @@
+background:radial-gradient(center center, circle, black)
+
+
+/* Estilos para la tabla */
+#tablaContactenos {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    
+  }
+  
+  #tablaContactenos th,
+  #tablaContactenos td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  #tablaContactenos th {
+    background-color: #f2f2f2;
+  }
+  
+  #tablaContactenos tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  #tablaContactenos tr:hover {
+    background-color: #e6e6e6;
+  } 
+
+/* Estilos para centrar la tabla */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+  .export-button {
+    font-size: 50px;
+    background-color: lightblue;
+ 
+}
+
+ /* Estilos CSS adicionales */
+ .update-button {
+  background-color: #061444;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+
+
+

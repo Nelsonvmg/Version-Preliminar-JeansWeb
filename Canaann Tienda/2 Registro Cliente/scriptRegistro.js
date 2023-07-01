@@ -242,7 +242,7 @@ function scriptRegistro() {
   `;
   
   var ventanaWidth = 800;
-    var ventanaHeight = 550;
+    var ventanaHeight = 500;
     var ventanaLeft = (window.innerWidth - ventanaWidth) / 2;
     var ventanaTop = (window.innerHeight - ventanaHeight) / 2;
   

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>Interfaz de Administrador</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.1/css/ionicons.min.css" />
+	<link rel="stylesheet" href="../1 Interfaz Inicio/style.css" />
+	<link rel="stylesheet" href="styles.css" />
+	<script src="script.js"></script>
+	<header class="main-header">
+		<div class="container container--flex">
+			<div class="main-header__container">
+				<h1 class="main-header__title">CANAANN</h1>
+				<span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+				<nav class="main-nav" id="main-nav">
+					<ul class="menu">
+						<li class="menu__item"><a href="../1 Interfaz Inicio/index.html" class="menu__link">CERRAR SESIÓN</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">NOSOTROS</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">TIENDA</a></li>
+						<li class="menu__item"><a href="#" class="menu__link">CONTACTENOS</a></li>
+						<li class="menu__item"><a href="javascript:void(0);" class="menu__link"
+								onclick="scriptRegistro()">REGÍSTRATE</a></li>
+						<!-- <button class="registro-btn" onclick="registrar()">Registrar</button> -->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+</head>
+
+<body>
+	<div class="panel-container">
+		<div class="panel-container">
+			<section id="usuarios">
+				<i class="icon ion-person"></i>
+				<h2>Gestión de Usuarios</h2>
+				<div class="button-container">
+					<button onclick="openRegistrar()">Registrar Usuario</button>
+					<script>
+						function openRegistrar() {
+							var width = 500;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+													              <!DOCTYPE html>
+													<html>
+													<head>
+													    <title>Formulario de Registro</title>														
+													</head>
+													<body>
+													    <h2>Formulario de Registro</h2>
+													    <form method="POST" action="RegistroUsuarios.php">
+													      <label for="Tipo_Documento">Tipo de Documento:</label>
+													<select name="Tipo_Documento" required>
+													    <option value="C.C.">C.C.</option>
+													    <option value="C.C. Extranjera">C.C. Extranjera</option>
+													    <option value="Pasaporte">Pasaporte</option>
+													    <option value="NIT">NIT</option>
+													</select><br>
+
+
+															<label for="ID_Persona">Número de Documento:</label>
+															<input type="text" name="ID_Persona" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Por favor, ingrese solo números" placeholder="Ejemplo: 123456789" required><br>
+
+
+													        <label for="Nombre_Persona">Nombres:</label>
+													        <input type="text" name="Nombre_Persona" placeholder="Ejemplo: Juan Pablo" required><br>
+
+													        <label for="Apellido_Paterno">Primer Apellido:</label>
+													        <input type="text" name="Apellido_Paterno" placeholder="Ejemplo: Pérez" required><br>
+
+													        <label for="Apellido_Materno">Segundo Apellido:</label>
+													        <input type="text" name="Apellido_Materno" placeholder="Ejemplo: Gómez" required><br>
+
+													        <label for="Edad">Edad:</label>
+													        <input type="text" name="Edad" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Por favor, ingrese solo números" placeholder="Ejemplo: 20" required><br>
+
+													        <label for="Direccion">Dirección:</label>
+													        <input type="text" name="Direccion" placeholder="Ejemplo: Dg 45 Este #35-78" required><br>
+
+													        <label for="Email_1">Email 1:</label>
+															<input type="email" name="Email_1" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Ejemplo: juanpablo1@" title="Por favor, ingrese un email válido" required><br>
+
+
+													        <label for="Email_2">Email 2:</label>
+													        <input type="email" name="Email_2" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="Ejemplo: juanpablo1@" title="Por favor, ingrese un email válido" ><br>
+
+													        <label for="Telefono_celular_1">Teléfono Celular:</label>
+													        <input type="text" name="Telefono_celular_1" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Por favor, ingrese solo números" placeholder="Ejemplo: 37777777" required><br>
+
+													        <label for="Telefono_celular_2">Teléfono Fijo:</label>
+													        <input type="text" name="Telefono_celular_2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Por favor, ingrese solo números" placeholder="Ejemplo: 6017777777"><br>
+
+
+															<label for="Tipo_Rol">Tipo de Rol:</label>
+															<select name="Tipo_Rol" required>
+																		<option value="Administrador">Administrador</option>
+																		<option value="Cliente">Cliente</option>
+																		<option value="Vendedor">Vendedor</option>
+																		<option value="Almacenista">Almacenista</option>
+																		<option value="Gerente">Gerente</option>
+																		<option value="Publicista">Publicista</option>
+																		<option value="Proveedor">Proveedor</option>
+															</select><br>
+
+													        <label for="Usuario">Número de Documento:</label>
+													        <input type="text" name="Usuario" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Por favor, ingrese solo números" placeholder="Ejemplo: 123456789" required><br>
+
+													        <label for="Password">Contraseña:</label>
+															<input type="password" name="Password" placeholder="Ejemplo: MiContraseña123" required><br>
+
+													        <input type="submit" value="Registrar">
+													    </form>
+													</body>
+													</html>
+													              `);
+						}
+					</script>
+
+					<button onclick="openActualizar()">Actualizar Usuario</button>
+
+					<script>
+						function openActualizar() {
+							var width = 500;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+													<h2>Formulario de Consulta</h2>
+													<form method="POST" action="RegistroConsultar.php">
+														<label for="Numero_Documento">Número de Documento:</label>
+														<input type="text" name="Numero_Documento" required><br>
+														<input type="submit" value="Validar">
+													</form>
+												`);
+						}
+					</script>
+
+					<button onclick="openConsulta()">Consultar Lista</button>
+					<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+					<script>
+						function openConsulta() {
+							var width = 900;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+											<style>
+												table {
+										border-collapse: collapse;
+												}
+
+											th, td {
+												border: 1px solid black;
+												padding: 8px;
+													}
+											</style>
+											<h2>Formulario de Consulta</h2>
+											<input type="text" id="filtroInput" placeholder="Buscar...">
+											<table id="tablaRegistros"></table>
+											`);
+
+							fetch('obtener_datos.php')
+								.then(response => response.json())
+								.then(data => {
+									var tabla = popup.document.getElementById("tablaRegistros");
+									var filtroInput = popup.document.getElementById("filtroInput");
+
+									var thead = tabla.createTHead();
+									var encabezados = ["Tipo Documento", "Número Documento", "Nombres", "Primer Apellido",
+										"Segundo Apellido", "Edad", "Dirección", "Correo 1", "Correo 2",
+										"Celular", "Fijo", "Rol", "Usuario", "Contraseña", "Estado"];
+									var encabezadoRow = thead.insertRow();
+									encabezados.forEach(encabezado => {
+										var th = document.createElement("th");
+										th.innerHTML = encabezado;
+										encabezadoRow.appendChild(th);
+									});
+
+									var tbody = tabla.createTBody();
+									data.forEach(registro => {
+										var fila = tbody.insertRow();
+										Object.values(registro).forEach(valor => {
+											var celda = document.createElement("td");
+											celda.innerHTML = valor;
+											fila.appendChild(celda);
+										});
+									});
+
+									filtroInput.addEventListener("input", function () {
+										var filtro = filtroInput.value.toLowerCase();
+										var filas = tbody.getElementsByTagName("tr");
+
+										Array.from(filas).forEach(fila => {
+											var celdas = fila.getElementsByTagName("td");
+											var mostrarFila = false;
+
+											Array.from(celdas).forEach(celda => {
+												if (celda.innerHTML.toLowerCase().indexOf(filtro) > -1) {
+													mostrarFila = true;
+												}
+											});
+
+											fila.style.display = mostrarFila ? "" : "none";
+										});
+									});
+
+									// Agregar botón de descarga de Excel
+									var downloadButton = popup.document.createElement("button");
+									downloadButton.innerHTML = "Descargar Excel";
+									downloadButton.onclick = function () {
+										// Crear un libro de Excel
+										var workbook = XLSX.utils.table_to_book(tabla, { sheet: "Reporte" });
+
+										// Convertir el libro de Excel a un archivo binario
+										var excelBinary = XLSX.write(workbook, { bookType: "xlsx", type: "binary" });
+
+										// Crear un Blob con el archivo binario
+										var blob = new Blob([s2ab(excelBinary)], { type: "application/octet-stream" });
+
+										// Crear una URL para el Blob y descargar el archivo
+										var downloadUrl = URL.createObjectURL(blob);
+										var a = popup.document.createElement("a");
+										a.href = downloadUrl;
+										a.download = "reporte.xlsx";
+										a.click();
+									};
+
+									popup.document.body.appendChild(downloadButton);
+
+									// ...
+
+									// Función auxiliar para convertir una cadena binaria a un ArrayBuffer
+									function s2ab(s) {
+										var buf = new ArrayBuffer(s.length);
+										var view = new Uint8Array(buf);
+										for (var i = 0; i < s.length; i++) {
+											view[i] = s.charCodeAt(i) & 0xff;
+										}
+										return buf;
+									}
+
+									popup.document.body.style.zoom = '70%';
+								})
+								.catch(error => {
+									console.log("Error al obtener los datos:", error);
+								});
+						}
+					</script>
+				</div>
+			</section>
+		</div>
+
+		<div class="panel-container">
+			<section id="usuarios">
+				<i class="icon ion-person"></i>
+				<h2>Gestión de Inventario</h2>
+				<div class="button-container">
+					<button onclick="openRegistrarProducto()">Registrar Producto</button>
+					<script>
+						function openRegistrarProducto() {
+							var width = 500;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+
+																	<!DOCTYPE html>
+							<html>
+							<head>
+							    <title>Formulario de Registro</title>
+							</head>
+							<body>
+							    <h2>Formulario de Registro</h2>
+							    <form method="POST" action="RegistroProductos.php">
+							        <label for="id_producto">ID Producto:</label>
+									<input type="text" id="id_producto" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="id_producto" required><br>
+
+							        <label for="nombre_producto">Nombre Producto:</label>
+							        <input type="text" id="nombre_producto" name="nombre_producto" required><br>
+
+							        <label for="descripcion_producto">Descripción Producto:</label>
+									<textarea id="descripcion_producto" name="descripcion_producto"></textarea><br>
+
+							        <label for="talla_producto">Talla Producto:</label>
+									<select id="talla_producto" name="talla_producto" required>
+							    	<option value="">Selecciona una opción</option>
+							    	<option value="XS">XS</option>
+							    	<option value="S">S</option>
+							    	<option value="M">M</option>
+							    	<option value="L">L</option>
+							    	<option value="XL">XL</option>
+							    	<option value="custom">Otra Talla</option>
+									</select><br>
+
+							        <label for="color_producto">Color Producto:</label>
+							        <input type="text" id="color_producto" name="color_producto" required><br>
+
+							        <label for="linea_producto">Línea Producto:</label>
+									<select id="linea_producto" name="linea_producto" required>
+							    	<option value="">Selecciona una opción</option>
+							    	<option value="linea_infantil">Línea Infantil</option>
+							    	<option value="linea_niñas">Línea Niñas</option>
+							    	<option value="linea_niños">Línea Niños</option>
+							    	<option value="linea_masculino">Línea Masculino</option>
+							    	<option value="linea_femenina">Línea Femenina</option>
+							    	<option value="linea_juvenil">Línea Juvenil</option>
+									</select><br>
+
+							        <label for="cantidad_producto">Cantidad Producto:</label>
+							        <input type="number" id="cantidad_producto" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="cantidad_producto" required><br>
+
+							        <label for="fecha_compra">Fecha Compra:</label>
+							        <input type="date" id="fecha_compra" name="fecha_compra" required><br>
+
+							        <label for="precio_compra">Precio de Compra:</label>
+									<input type="text" id="precio_compra" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="precio_compra" placeholder="Ejemplo: $0000" required><br>
+
+									<label for="precio_venta">Precio de Venta:</label>
+									<input type="text" id="precio_venta" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="precio_venta" placeholder="Ejemplo: $0000" required><br>
+
+
+							        <label for="proveedor">Proveedor:</label>
+							        <input type="text" id="proveedor" name="proveedor" required><br>
+
+							        <label for="telefono">Teléfono:</label>
+							        <input type="text" id="telefono" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="telefono" required><br>
+
+							        <label for="direccion">Dirección:</label>
+							        <input type="text" id="direccion" name="direccion" required><br>
+
+							        <input type="submit" value="Registrar">
+							    </form>
+							</body>
+							</html>
+
+																	              `);
+						}
+					</script>
+
+					<button onclick="openActualizarProducto()">Actualizar Producto</button>
+
+					<script>
+						function openActualizarProducto() {
+							var width = 500;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+													<h2>Formulario de Consulta</h2>
+													<form method="POST" action="RegistroConsultarProducto.php">
+														<label for="id_producto">ID Producto:</label>
+														<input type="text" name="id_producto" required><br>
+														<input type="submit" value="Validar">
+													</form>
+												`);
+						}
+					</script>
+
+					<button onclick="openConsultaProdutos()">Consultar Lista</button>
+					<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+					<script>
+						function openConsultaProdutos() {
+							var width = 900;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+											<style>
+												table {
+										border-collapse: collapse;
+												}
+
+											th, td {
+												border: 1px solid black;
+												padding: 8px;
+													}
+											</style>
+											<h2>Formulario de Consulta</h2>
+											<input type="text" id="filtroInput" placeholder="Buscar...">
+											<table id="tablaRegistros"></table>
+											`);
+
+							fetch('obtener_datos_productos.php')
+								.then(response => response.json())
+								.then(data => {
+									var tabla = popup.document.getElementById("tablaRegistros");
+									var filtroInput = popup.document.getElementById("filtroInput");
+
+									var thead = tabla.createTHead();
+									var encabezados = ["ID Producto", "Nombre Producto", "Descripción Producto", "Talla",
+										"Color", "Línea", "Cantidad", "Fecha Compra", "Precio Compra",
+										"Precio Venta", "Proveedor", "Telefono", "Dirección", "Estado"];
+									var encabezadoRow = thead.insertRow();
+									encabezados.forEach(encabezado => {
+										var th = document.createElement("th");
+										th.innerHTML = encabezado;
+										encabezadoRow.appendChild(th);
+									});
+
+									var tbody = tabla.createTBody();
+									data.forEach(registro => {
+										var fila = tbody.insertRow();
+										Object.values(registro).forEach(valor => {
+											var celda = document.createElement("td");
+											celda.innerHTML = valor;
+											fila.appendChild(celda);
+										});
+									});
+
+									filtroInput.addEventListener("input", function () {
+										var filtro = filtroInput.value.toLowerCase();
+										var filas = tbody.getElementsByTagName("tr");
+
+										Array.from(filas).forEach(fila => {
+											var celdas = fila.getElementsByTagName("td");
+											var mostrarFila = false;
+
+											Array.from(celdas).forEach(celda => {
+												if (celda.innerHTML.toLowerCase().indexOf(filtro) > -1) {
+													mostrarFila = true;
+												}
+											});
+
+											fila.style.display = mostrarFila ? "" : "none";
+										});
+									});
+
+									// Agregar botón de descarga de Excel
+									var downloadButton = popup.document.createElement("button");
+									downloadButton.innerHTML = "Descargar Excel";
+									downloadButton.onclick = function () {
+										// Crear un libro de Excel
+										var workbook = XLSX.utils.table_to_book(tabla, { sheet: "Reporte" });
+
+										// Convertir el libro de Excel a un archivo binario
+										var excelBinary = XLSX.write(workbook, { bookType: "xlsx", type: "binary" });
+
+										// Crear un Blob con el archivo binario
+										var blob = new Blob([s2ab(excelBinary)], { type: "application/octet-stream" });
+
+										// Crear una URL para el Blob y descargar el archivo
+										var downloadUrl = URL.createObjectURL(blob);
+										var a = popup.document.createElement("a");
+										a.href = downloadUrl;
+										a.download = "reporte.xlsx";
+										a.click();
+									};
+
+									popup.document.body.appendChild(downloadButton);
+
+									// ...
+
+									// Función auxiliar para convertir una cadena binaria a un ArrayBuffer
+									function s2ab(s) {
+										var buf = new ArrayBuffer(s.length);
+										var view = new Uint8Array(buf);
+										for (var i = 0; i < s.length; i++) {
+											view[i] = s.charCodeAt(i) & 0xff;
+										}
+										return buf;
+									}
+
+									popup.document.body.style.zoom = '70%';
+								})
+								.catch(error => {
+									console.log("Error al obtener los datos:", error);
+								});
+						}
+					</script>
+				</div>
+			</section>
+		</div>
+
+		<div class="panel-container">
+			<section id="usuarios">
+				<i class="icon ion-person"></i>
+				<h2>Gestión de Ventas</h2>
+				<div class="button-container">
+
+					<button onclick="openRegistrarVenta()">Registrar Venta</button>
+
+					<script>
+						function openRegistrarVenta() {
+							var width = 500;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+													<h2>Formulario de Consulta</h2>
+													<form action="Venta_registro.php" method="post">
+						<button type="submit" class="button">Registrar Venta</button>
+					</form>	
+												`);
+						}
+					</script>					
+
+					<button onclick="openActualizarVenta()">Actualizar Venta</button>
+
+					<script>
+						function openActualizarVenta() {
+							var width = 500;
+							var height = 400;
+							var left = (window.innerWidth / 2) - (width / 2);
+							var top = (window.innerHeight / 2) - (height / 2);
+
+							var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+							popup.document.write(`
+													<h2>Formulario de Consulta</h2>
+													<form method="POST" action="Venta_consultar.php">
+														<label for="id_venta">ID Venta:</label>
+														<input type="text" name="id_venta" required><br>
+														<input type="submit" value="Validar">
+													</form>
+												`);
+						}
+					</script>
+
+<button onclick="openConsultaVentas()">Consultar Lista</button>
+<script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<script>
+  function openConsultaVentas() {
+    var width = 900;
+    var height = 400;
+    var left = (window.innerWidth / 2) - (width / 2);
+    var top = (window.innerHeight / 2) - (height / 2);
+
+    var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+    popup.document.write(`
+      <style>
+        table {
+          border-collapse: collapse;
+        }
+
+        th, td {
+          border: 1px solid black;
+          padding: 8px;
+        }
+      </style>
+      <h2>Formulario de Consulta de Ventas</h2>
+      <input type="text" id="filtroInput" placeholder="Buscar...">
+      <table id="tablaRegistros"></table>
+    `);
+
+    fetch('obtener_datos_ventas.php')
+      .then(response => response.json())
+      .then(data => {
+        var tabla = popup.document.getElementById("tablaRegistros");
+        var filtroInput = popup.document.getElementById("filtroInput");
+
+        var thead = tabla.createTHead();
+        var encabezados = ["ID Venta", "Número de Documento", "Nombres", "Apellido Paterno", "Teléfono Celular", "Dirección", "Email", "ID Producto", "Nombre Producto", "Talla Producto", "Color Producto", "Cantidad Producto", "Precio Venta", "Valor Total", "Estado"];
+        var encabezadoRow = thead.insertRow();
+        encabezados.forEach(encabezado => {
+          var th = document.createElement("th");
+          th.innerHTML = encabezado;
+          encabezadoRow.appendChild(th);
+        });
+
+        var tbody = tabla.createTBody();
+        data.forEach(registro => {
+          var fila = tbody.insertRow();
+          Object.values(registro).forEach(valor => {
+            var celda = document.createElement("td");
+            celda.innerHTML = valor;
+            fila.appendChild(celda);
+          });
+        });
+
+        filtroInput.addEventListener("input", function () {
+          var filtro = filtroInput.value.toLowerCase();
+          var filas = tbody.getElementsByTagName("tr");
+
+          Array.from(filas).forEach(fila => {
+            var celdas = fila.getElementsByTagName("td");
+            var mostrarFila = false;
+
+            Array.from(celdas).forEach(celda => {
+              if (celda.innerHTML.toLowerCase().indexOf(filtro) > -1) {
+                mostrarFila = true;
+              }
+            });
+
+            fila.style.display = mostrarFila ? "" : "none";
+          });
+        });
+
+        // Agregar botón de descarga de Excel
+        var downloadButton = popup.document.createElement("button");
+        downloadButton.innerHTML = "Descargar Excel";
+        downloadButton.onclick = function () {
+          // Crear un libro de Excel
+          var workbook = XLSX.utils.table_to_book(tabla, { sheet: "Reporte" });
+
+          // Convertir el libro de Excel a un archivo binario
+          var excelBinary = XLSX.write(workbook, { bookType: "xlsx", type: "binary" });
+
+          // Crear un Blob con el archivo binario
+          var blob = new Blob([s2ab(excelBinary)], { type: "application/octet-stream" });
+
+          // Crear una URL para el Blob y descargar el archivo
+          var downloadUrl = URL.createObjectURL(blob);
+          var a = popup.document.createElement("a");
+          a.href = downloadUrl;
+          a.download = "reporte_ventas.xlsx";
+          a.click();
+        };
+
+        popup.document.body.appendChild(downloadButton);
+
+        // ...
+
+        // Función auxiliar para convertir una cadena binaria a un ArrayBuffer
+        function s2ab(s) {
+          var buf = new ArrayBuffer(s.length);
+          var view = new Uint8Array(buf);
+          for (var i = 0; i < s.length; i++) {
+            view[i] = s.charCodeAt(i) & 0xff;
+          }
+          return buf;
+        }
+
+        popup.document.body.style.zoom = '70%';
+      })
+      .catch(error => {
+        console.log("Error al obtener los datos:", error);
+      });
+  }
+</script>
+
+<!-- <button onclick="openTirilla()">Tirillas</button>
+
+<script>
+	function openTirilla() {
+	  var width = 500;
+	  var height = 400;
+	  var left = (window.innerWidth / 2) - (width / 2);
+	  var top = (window.innerHeight / 2) - (height / 2);
+  
+	  var popup = window.open("", "Popup", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+	  popup.document.write(`
+		<h2>Formulario de Consulta</h2>
+		<form action="Venta_tirilla.php" method="get">
+		  <label for="id">ID de Venta:</label>
+		  <input type="text" id="id" name="id" required>
+		  <button type="submit" class="button">Consultar Tirilla</button>
+		</form>
+	  `);
+	}
+  </script> -->
+		  
+
+
+		</div>
+		
+	</div>
+</body>
+<script src="../1 Interfaz Inicio/script.js"></script>
+
+</html>
