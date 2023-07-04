@@ -47,7 +47,7 @@
         <option value="radicado">radicado</option>
         <option value="respondida">respondida</option>
         <option value="consultada">consultada</option>
-        <option value="cerrada">cerrada</option>
+        <option value="archivado">archivado</option>
       </select>
       <button type="submit">Filtrar</button>
     </form>
